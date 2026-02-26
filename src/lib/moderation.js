@@ -16,15 +16,17 @@ export async function isWhitelistedUserId(userId) {
   return wl.userIds?.includes(String(userId)) ?? false;
 }
 
-export async function enforceMessageProtections(message, { logChannel } = {}) {
+export async function enforceMessageProtections(message, { logChannel, moderation } = {}) {
   if (!message.guild || message.author?.bot) return;
   if (!message.member) return;
 
   const bypass = (await isWhitelistedUserId(message.author.id)) || message.member.permissions.has(PermissionFlagsBits.Administrator);
   if (bypass) return;
 
+  const mod = moderation ?? {};
+
   // Anti-webhook
-  if (message.webhookId) {
+  if (mod.antiWebhook !== false && message.webhookId) {
     try {
       await message.delete();
     } catch {}
@@ -33,7 +35,7 @@ export async function enforceMessageProtections(message, { logChannel } = {}) {
   }
 
   // Anti invite Discord
-  if (hasInviteLink(message.content)) {
+  if (mod.antiInvite !== false && hasInviteLink(message.content)) {
     try {
       await message.delete();
     } catch {}
@@ -44,18 +46,20 @@ export async function enforceMessageProtections(message, { logChannel } = {}) {
   }
 
   // Anti mention spam
-  const mentions = mentionCount(message);
-  if (mentions >= 6) {
-    try {
-      await message.delete();
-    } catch {}
-    try {
-      await message.member.timeout(10 * 60 * 1000, "Spam mention");
-    } catch {}
-    await logChannel
-      ?.send?.({ content: `🛡️ Spam mention: timeout 10 min pour <@${message.author.id}> (mentions: ${mentions}).` })
-      .catch(() => {});
-    return;
+  if (mod.antiMentionSpam !== false) {
+    const mentions = mentionCount(message);
+    if (mentions >= 6) {
+      try {
+        await message.delete();
+      } catch {}
+      try {
+        await message.member.timeout(10 * 60 * 1000, "Spam mention");
+      } catch {}
+      await logChannel
+        ?.send?.({ content: `🛡️ Spam mention: timeout 10 min pour <@${message.author.id}> (mentions: ${mentions}).` })
+        .catch(() => {});
+      return;
+    }
   }
 }
 
@@ -70,7 +74,9 @@ async function fetchLastAuditActor(guild, type) {
   }
 }
 
-export async function enforceChannelDeleteProtection(channel, { logChannel } = {}) {
+export async function enforceChannelDeleteProtection(channel, { logChannel, moderation } = {}) {
+  if (moderation?.antiChannelDelete === false) return;
+
   const guild = channel.guild;
   const actor = await fetchLastAuditActor(guild, AuditLogEvent.ChannelDelete);
   if (!actor?.executorId) return;

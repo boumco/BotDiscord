@@ -16,6 +16,7 @@ import { helpCommand } from "./slash/help.js";
 import { musicCommand } from "./slash/music.js";
 import { whitelistCommand } from "./slash/whitelist.js";
 import { readState } from "./lib/storage.js";
+import { getModerationConfig } from "./lib/moderationConfig.js";
 import { enforceChannelDeleteProtection, enforceMessageProtections } from "./lib/moderation.js";
 
 const token = process.env.DISCORD_TOKEN;
@@ -153,12 +154,13 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 client.on(Events.MessageCreate, async (message) => {
   if (!message.guild) return;
+  const state = await readState();
   const logChannel = await getLogChannel(message.guild);
-  await enforceMessageProtections(message, { logChannel });
+  const moderation = getModerationConfig(state, message.guild.id);
+  await enforceMessageProtections(message, { logChannel, moderation });
 
   // Salon médias: uniquement images/vidéos
   try {
-    const state = await readState();
     const mediasId = state?.[message.guild.id]?.channels?.medias;
     if (mediasId && message.channelId === mediasId && !message.author.bot) {
       const hasMedia =
@@ -174,8 +176,10 @@ client.on(Events.MessageCreate, async (message) => {
 
 client.on(Events.ChannelDelete, async (channel) => {
   if (!channel.guild) return;
+  const state = await readState();
   const logChannel = await getLogChannel(channel.guild);
-  await enforceChannelDeleteProtection(channel, { logChannel });
+  const moderation = getModerationConfig(state, channel.guild.id);
+  await enforceChannelDeleteProtection(channel, { logChannel, moderation });
 });
 
 client.once(Events.ClientReady, (c) => {

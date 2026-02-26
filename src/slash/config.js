@@ -6,6 +6,11 @@ import {
   buildRoleSelectComponents,
   SELECT_GROUPS
 } from "../lib/serverBlueprint.js";
+import {
+  getModerationConfig,
+  getRuleByValue,
+  MODERATION_RULES
+} from "../lib/moderationConfig.js";
 
 const CONFIG_KEYS = [
   { name: "verification", description: "Salon de vérification (bouton + code)", value: "verification" },
@@ -16,6 +21,11 @@ const CONFIG_KEYS = [
   { name: "roles", description: "Salon de sélection des rôles", value: "roles" },
   { name: "staff", description: "Salon staff", value: "staff" },
   { name: "logs", description: "Salon des logs modération", value: "logs" }
+];
+
+const MODERATION_CHOICES = [
+  { name: "Voir la liste des règles", value: "liste" },
+  ...MODERATION_RULES.map((r) => ({ name: r.name, value: r.value }))
 ];
 
 function canConfig(interaction) {
@@ -37,20 +47,44 @@ function buildRoleIdByToken(guild) {
 export const configCommand = {
   data: new SlashCommandBuilder()
     .setName("config")
-    .setDescription("Configure un salon du bot (sauvegardé sur le disque).")
-    .addStringOption((opt) =>
-      opt
-        .setName("type")
-        .setDescription("Type de salon à configurer")
-        .setRequired(true)
-        .addChoices(...CONFIG_KEYS)
-    )
-    .addChannelOption((opt) =>
-      opt
+    .setDescription("Configure les salons et la modération du bot.")
+    .addSubcommand((sub) =>
+      sub
         .setName("salon")
-        .setDescription("Le salon à utiliser")
-        .setRequired(true)
-        .addChannelTypes(ChannelType.GuildText)
+        .setDescription("Définir un salon (ex. vérification, logs, médias…)")
+        .addStringOption((opt) =>
+          opt
+            .setName("type")
+            .setDescription("Type de salon")
+            .setRequired(true)
+            .addChoices(...CONFIG_KEYS)
+        )
+        .addChannelOption((opt) =>
+          opt
+            .setName("salon")
+            .setDescription("Le salon à utiliser")
+            .setRequired(true)
+            .addChannelTypes(ChannelType.GuildText)
+        )
+    )
+    .addSubcommand((sub) =>
+      sub
+        .setName("moderation")
+        .setDescription("Activer ou désactiver une règle de modération & sécurité")
+        .addStringOption((opt) =>
+          opt
+            .setName("regle")
+            .setDescription("Règle à modifier (ou « liste » pour afficher)")
+            .setRequired(true)
+            .addChoices(...MODERATION_CHOICES)
+        )
+        .addStringOption((opt) =>
+          opt
+            .setName("etat")
+            .setDescription("On = activé, Off = désactivé (ignoré si regle = liste)")
+            .setRequired(false)
+            .addChoices({ name: "Activé", value: "on" }, { name: "Désactivé", value: "off" })
+        )
     ),
 
   async execute(interaction) {
@@ -63,6 +97,50 @@ export const configCommand = {
       return;
     }
 
+    const sub = interaction.options.getSubcommand();
+    if (sub === "moderation") {
+      const state = await readState();
+      const regle = interaction.options.getString("regle", true);
+      const etat = interaction.options.getString("etat");
+
+      if (regle === "liste") {
+        const cfg = getModerationConfig(state, interaction.guildId);
+        const lines = MODERATION_RULES.map((r) => {
+          const v = cfg[r.key];
+          const emoji = v ? "🟢" : "🔴";
+          return `${emoji} **${r.name}** : ${v ? "activé" : "désactivé"}`;
+        });
+        await interaction.reply({
+          content: "**Modération & sécurité**\n\n" + lines.join("\n"),
+          ephemeral: true
+        });
+        return;
+      }
+
+      if (etat !== "on" && etat !== "off") {
+        await interaction.reply({ content: "Précise **etat** : `on` ou `off`.", ephemeral: true });
+        return;
+      }
+
+      const rule = getRuleByValue(regle);
+      if (!rule) {
+        await interaction.reply({ content: "Règle inconnue.", ephemeral: true });
+        return;
+      }
+
+      if (!state[interaction.guildId]) state[interaction.guildId] = {};
+      if (!state[interaction.guildId].moderation) state[interaction.guildId].moderation = {};
+      state[interaction.guildId].moderation[rule.key] = etat === "on";
+      await writeState(state);
+
+      await interaction.reply({
+        content: `✅ **${rule.name}** : ${etat === "on" ? "activé" : "désactivé"}.`,
+        ephemeral: true
+      });
+      return;
+    }
+
+    // sub === "salon"
     const type = interaction.options.getString("type", true);
     const channel = interaction.options.getChannel("salon", true);
 
