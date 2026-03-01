@@ -14,6 +14,7 @@ export const helpCommand = {
           "",
           "**Configuration**",
           "- `/config salon` – définit un salon (ex. type verification + #salon).",
+          "- Pour les **messages de bienvenue**, configure le salon avec `/config salon bienvenue #welcome` (ou le salon de ton choix).",
           "- `/config moderation` – active/désactive les règles (anti-invite, anti-mention, anti-webhook, protection suppression salon). Regle « liste » pour afficher.",
           "- `/whitelist ajouter/retirer/liste` – gère la whitelist (bypass des protections).",
           "",

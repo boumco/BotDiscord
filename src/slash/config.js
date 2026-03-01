@@ -1,6 +1,6 @@
 import { ChannelType, PermissionFlagsBits, SlashCommandBuilder } from "discord.js";
 import { readState, writeState } from "../lib/storage.js";
-import { buildVerificationEmbed, buildRolesEmbed, buildRulesEmbed } from "../lib/embeds.js";
+import { buildVerificationEmbed, buildRolesEmbed, buildRulesEmbed, buildTicketSupportEmbed, buildTicketSupportComponents } from "../lib/embeds.js";
 import {
   buildVerificationComponents,
   buildRoleSelectComponents,
@@ -20,7 +20,9 @@ const CONFIG_KEYS = [
   { name: "medias", description: "Salon médias (images/vidéos uniquement)", value: "medias" },
   { name: "roles", description: "Salon de sélection des rôles", value: "roles" },
   { name: "staff", description: "Salon staff", value: "staff" },
-  { name: "logs", description: "Salon des logs modération", value: "logs" }
+  { name: "logs", description: "Salon des logs modération", value: "logs" },
+  { name: "bienvenue", description: "Salon des messages de bienvenue (arrivée des membres)", value: "bienvenue" },
+  { name: "ticket", description: "Salon pour ouvrir un ticket (boutons support)", value: "ticket" }
 ];
 
 const MODERATION_CHOICES = [
@@ -65,6 +67,41 @@ export const configCommand = {
             .setDescription("Le salon à utiliser")
             .setRequired(true)
             .addChannelTypes(ChannelType.GuildText)
+        )
+    )
+    .addSubcommand((sub) =>
+      sub
+        .setName("categorie")
+        .setDescription("Catégorie pour « Créer ton salon vocal »")
+        .addStringOption((opt) =>
+          opt
+            .setName("type")
+            .setDescription("Type")
+            .setRequired(true)
+            .addChoices(
+          { name: "creer-ton-salon", description: "Catégorie où créer les salons vocaux", value: "creer-ton-salon" },
+          { name: "ticket-ouvert", description: "Catégorie des tickets ouverts", value: "ticket-ouvert" },
+          { name: "ticket-ferme", description: "Catégorie des tickets fermés (avant suppression)", value: "ticket-ferme" }
+        )
+        )
+        .addChannelOption((opt) =>
+          opt
+            .setName("categorie")
+            .setDescription("La catégorie à utiliser")
+            .setRequired(true)
+            .addChannelTypes(ChannelType.GuildCategory)
+        )
+    )
+    .addSubcommand((sub) =>
+      sub
+        .setName("salonvocal")
+        .setDescription("Salon vocal « Rejoins pour créer ton salon »")
+        .addChannelOption((opt) =>
+          opt
+            .setName("salon")
+            .setDescription("Le salon vocal (les membres qui le rejoignent obtiennent leur propre salon)")
+            .setRequired(true)
+            .addChannelTypes(ChannelType.GuildVoice)
         )
     )
     .addSubcommand((sub) =>
@@ -140,6 +177,41 @@ export const configCommand = {
       return;
     }
 
+    if (sub === "categorie") {
+      const type = interaction.options.getString("type", true);
+      const category = interaction.options.getChannel("categorie", true);
+      const state = await readState();
+      if (!state[interaction.guildId]) state[interaction.guildId] = {};
+      if (!state[interaction.guildId].categories) state[interaction.guildId].categories = {};
+      if (type === "creer-ton-salon") {
+        state[interaction.guildId].categories.creerTonSalon = category.id;
+      } else if (type === "ticket-ouvert") {
+        state[interaction.guildId].categories.ticketOuvert = category.id;
+      } else if (type === "ticket-ferme") {
+        state[interaction.guildId].categories.ticketFerme = category.id;
+      }
+      await writeState(state);
+      await interaction.reply({
+        content: `✅ Catégorie **${type}** configurée : ${category.name}.`,
+        ephemeral: true
+      });
+      return;
+    }
+
+    if (sub === "salonvocal") {
+      const voiceChannel = interaction.options.getChannel("salon", true);
+      const state = await readState();
+      if (!state[interaction.guildId]) state[interaction.guildId] = {};
+      if (!state[interaction.guildId].channels) state[interaction.guildId].channels = {};
+      state[interaction.guildId].channels.salonVocal = voiceChannel.id;
+      await writeState(state);
+      await interaction.reply({
+        content: `✅ Salon vocal « Créer ton salon » configuré : <#${voiceChannel.id}>.`,
+        ephemeral: true
+      });
+      return;
+    }
+
     // sub === "salon"
     const type = interaction.options.getString("type", true);
     const channel = interaction.options.getChannel("salon", true);
@@ -203,6 +275,24 @@ export const configCommand = {
       } else {
         const sent = await channel.send(payload);
         state[interaction.guildId].messages.roles = { channelId: channel.id, messageId: sent.id };
+      }
+    } else if (type === "ticket") {
+      const payload = {
+        embeds: [buildTicketSupportEmbed()],
+        components: buildTicketSupportComponents()
+      };
+      const stored = state[interaction.guildId].messages?.ticket;
+      if (stored?.channelId === channel.id && stored?.messageId) {
+        try {
+          const msg = await channel.messages.fetch(stored.messageId);
+          await msg.edit(payload);
+        } catch {
+          const sent = await channel.send(payload);
+          state[interaction.guildId].messages.ticket = { channelId: channel.id, messageId: sent.id };
+        }
+      } else {
+        const sent = await channel.send(payload);
+        state[interaction.guildId].messages.ticket = { channelId: channel.id, messageId: sent.id };
       }
     }
 

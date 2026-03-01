@@ -12,6 +12,10 @@
       "rules": {
         "channelId": "1475942800997613659",
         "messageId": "1475942817619509342"
+      },
+      "ticket": {
+        "channelId": "1476706523936849930",
+        "messageId": "1476706739372949534"
       }
     },
     "channels": {
@@ -21,11 +25,50 @@
       "general": "1475942809159860459",
       "roles": "1475942810619346964",
       "staff": "1475942811814727800",
-      "logs": "1475942813119152200"
+      "logs": "1475942813119152200",
+      "bienvenue": "1476611664076996789",
+      "salonVocal": "1476616332538675425",
+      "ticket": "1476706523936849930"
     },
     "roleIds": {
       "member": "1475942764708630611",
       "unverified": "1475942765752877159"
+    },
+    "categories": {
+      "creerTonSalon": "1476616296148762665",
+      "ticketOuvert": "1476706179999727680",
+      "ticketFerme": "1476706230574645348"
+    },
+    "dynamicVoiceChannels": {},
+    "moderation": {
+      "antiChannelDelete": false
+    },
+    "ticketChannels": {
+      "1476706950233325710": {
+        "ownerId": "1473793713179328724",
+        "type": "owner",
+        "closed": true
+      },
+      "1476707026657738899": {
+        "ownerId": "1473793713179328724",
+        "type": "staff",
+        "closed": true
+      },
+      "1476707074921730191": {
+        "ownerId": "1473793713179328724",
+        "type": "abus",
+        "closed": true
+      }
+    },
+    "staffStats": {
+      "546735493346230272": {
+        "ticketsResolved": 1,
+        "sumResolution": 4,
+        "sumSympathy": 5,
+        "sumRapidite": 5,
+        "countRatings": 1,
+        "lastComment": "Suce oui couille DDSDASD\n\n\nDSADASDAD"
+      }
     }
   }
 }

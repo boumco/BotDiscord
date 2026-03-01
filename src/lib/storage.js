@@ -40,3 +40,11 @@ export async function writeWhitelist(whitelist) {
   await writeJson("whitelist.json", whitelist);
 }
 
+/** configvocal.json : { [guildId]: { [userId]: { name, bitrate, userLimit } } } */
+export async function readConfigVocal() {
+  return await readJson("configvocal.json", {});
+}
+
+export async function writeConfigVocal(data) {
+  return await writeJson("configvocal.json", data);
+}

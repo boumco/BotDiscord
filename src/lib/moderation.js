@@ -80,6 +80,7 @@ export async function enforceChannelDeleteProtection(channel, { logChannel, mode
   const guild = channel.guild;
   const actor = await fetchLastAuditActor(guild, AuditLogEvent.ChannelDelete);
   if (!actor?.executorId) return;
+  if (actor.executorId === guild.client.user?.id) return;
 
   const bypass = await isWhitelistedUserId(actor.executorId);
   if (bypass) return;
