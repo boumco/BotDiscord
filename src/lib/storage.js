@@ -48,3 +48,12 @@ export async function readConfigVocal() {
 export async function writeConfigVocal(data) {
   return await writeJson("configvocal.json", data);
 }
+
+/** tasks.json : { tasks: [], lastGanttImport?: string } */
+export async function readTasks() {
+  return await readJson("tasks.json", { tasks: [] });
+}
+
+export async function writeTasks(data) {
+  return await writeJson("tasks.json", data);
+}

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Broken Realm" company="" webLink="http://" view-date="2026-03-08" view-index="0" gantt-divider-location="177" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="91" order="0"/>
+        <field id="tpd4" name="Date de début" width="35" order="1"/>
+        <field id="tpd5" name="Date de fin" width="35" order="2"/>
+        <field id="tpd15" name="Notes" width="20" order="3"/>
+        <option id="taskLabelUp" value="name"/>
+        <option id="taskLabelDown" value="advancement"/>
+        <option id="taskLabelLeft" value="resources"/>
+        <option id="taskLabelRight" value="coordinator"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+        <option id="color.recent"><![CDATA[#ffff33 #ff6666 #ff33ff #33ff00 #00ffff #6666ff]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="199" order="0"/>
+        <field id="1" name="Rôle par défaut" width="82" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="4e930c87238848d28e6de86111f20c56" name="Rig TheKnight" color="#33ff00" meeting="false" start="2026-03-09" duration="5" complete="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" uid="ce2999e2e209452a813d4e5a86264ed9" name="Sons pour TheKnight" color="#ff33ff" meeting="false" start="2026-03-09" duration="1" complete="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Strong"/>
+            <depend id="13" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" uid="7cfdf1d5bd9d4f8db126b50caf1c649f" name="Dev TheKnight" color="#ffff33" meeting="false" start="2026-04-07" duration="1" complete="0" expand="true"/>
+        <task id="7" uid="909560666bb1439ca597e73d89d8ce3a" name="Plan Lobby" color="#33ff00" meeting="false" start="2026-03-16" duration="3" complete="0" expand="true">
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" uid="5ee229945e2c45a5b0dd43b81c5970c1" name="Création/Dev Lobby" color="#6666ff" meeting="false" start="2026-03-27" duration="7" complete="0" expand="true">
+            <depend id="9" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" uid="ede42b10f4914bc08e74aeb345e5f305" name="Map Springtrap" color="#ff6666" meeting="false" start="2026-03-09" duration="14" complete="0" expand="true">
+            <depend id="5" type="2" difference="0" hardness="Strong"/>
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" uid="69107463a32e49c2a2b8bc8fe69a9721" name="Animation TheKnight" color="#ff6666" meeting="false" start="2026-03-27" duration="7" complete="0" expand="true">
+            <depend id="1" type="2" difference="0" hardness="Rubber"/>
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="9" uid="8436ecc32a0f42b8a5e705867f2fd645" name="Dev première partie" color="#ffff33" meeting="false" start="2026-04-07" duration="3" complete="0" expand="true">
+            <depend id="14" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" uid="d77d4bae05b84b47a77e3978b79cab45" name="Sans Création" color="#33ff00" meeting="false" start="2026-03-19" duration="14" complete="0" expand="true">
+            <depend id="12" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="12" uid="28282b787cdb4656bd751d72f7ac5b92" name="Implémentation Sans" color="#ffff33" meeting="false" start="2026-04-08" duration="1" complete="0" expand="true"/>
+        <task id="13" uid="f8985815e45d4790a00ef4b349ebe270" name="Sons Sans" color="#ff33ff" meeting="false" start="2026-03-10" duration="1" complete="0" expand="true">
+            <depend id="18" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="14" uid="71c6490db5a14f3494088133077a32e5" name="Phase Test" color="#00ffff" meeting="false" start="2026-04-10" duration="3" complete="0" expand="true">
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+            <depend id="16" type="2" difference="0" hardness="Strong"/>
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="15" uid="bc84abbafe184685ac6b13091fd62c9b" name="Animation Sans" color="#ff6666" meeting="false" start="2026-04-15" duration="7" complete="0" expand="true">
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="16" uid="5652244fa86549efb5e5d504e23fec3f" name="Creation" color="#33ff00" meeting="false" start="2026-04-15" duration="7" complete="0" expand="true"/>
+        <task id="17" uid="ee12a600e21f48bd9e9bfc0dee3dc70b" name="HUD/Refac/UX" color="#ffff33" meeting="false" start="2026-04-15" duration="7" complete="0" expand="true">
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="18" uid="5108634a9dc741598168fbcbe60fc429" name="Pack Son" color="#ff33ff" meeting="false" start="2026-03-11" duration="1" complete="0" expand="true"/>
+        <task id="19" uid="839dbfb50dc44b2cbf95ded85beda467" name="Nouvel map" color="#ff6666" meeting="false" start="2026-04-24" duration="14" complete="0" expand="true"/>
+        <task id="20" uid="9b1c5a83a5b54e15bd743a8fa95d868a" name="Plan Nouvel Map" color="#ff6666" meeting="false" start="2026-04-07" duration="3" complete="0" expand="true"/>
+        <task id="21" uid="6646282125254aba90c895772a57e6e4" name="Boutique" color="#ffff33" meeting="false" start="2026-04-24" duration="2" complete="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Redki" function="2" contacts="" phone=""/>
+        <resource id="1" name="Kura" function="Default:1" contacts="" phone=""/>
+        <resource id="2" name="Boumco" function="1" contacts="" phone=""/>
+        <resource id="3" name="Oualid" function="4" contacts="" phone=""/>
+        <resource id="4" name="Cursor" function="1" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="3" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="15" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="0" resource-id="1" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="7" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="16" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="10" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="1" resource-id="2" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="6" resource-id="2" function="1" responsible="false" load="100.0"/>
+        <allocation task-id="9" resource-id="2" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="2" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="17" resource-id="2" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="21" resource-id="2" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="2" resource-id="3" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="18" resource-id="3" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="13" resource-id="3" function="4" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="4" function="1" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="Développeur"/>
+        <role id="2" name="Animateur stp"/>
+        <role id="3" name="Modélisateur"/>
+        <role id="4" name="SFX Manager"/>
+        <role id="5" name=""/>
+    </roles>
+</project>

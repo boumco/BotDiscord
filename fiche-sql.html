@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fiche SQL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f0f14;
+      --card: #1a1a24;
+      --accent: #00d4aa;
+      --text: #e8e8ed;
+      --muted: #8888a0;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 1rem;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+      border-left: 4px solid var(--accent);
+      overflow: hidden;
+    }
+    .card summary {
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .card summary::-webkit-details-marker { display: none; }
+    .card summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+    .card[open] summary::after {
+      content: "−";
+    }
+    .card h2 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .card .preview {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+    .card .details {
+      padding: 0 1.2rem 1.2rem;
+      border-top: 1px solid rgba(0,212,170,0.2);
+    }
+    .card .details-inner {
+      padding-top: 1rem;
+    }
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+    .card li:last-child { margin-bottom: 0; }
+    .mnemo {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      padding: 0.25rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+    .code {
+      background: rgba(0,0,0,0.3);
+      border-radius: 8px;
+      padding: 0.8rem;
+      font-family: 'Consolas', monospace;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      margin: 0.6rem 0;
+    }
+    .code .ok { color: #4ade80; }
+    .code .err { color: #f87171; }
+    .valid { color: #4ade80; }
+    .invalid { color: #f87171; }
+    .tip {
+      background: rgba(0,212,170,0.08);
+      border-radius: 8px;
+      padding: 0.8rem;
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      border-left: 3px solid var(--accent);
+    }
+    .subtitle {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 1rem 0 0.4rem;
+    }
+    .subtitle:first-child { margin-top: 0; }
+    .checklist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .tag {
+      background: var(--bg);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.3rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+    }
+    .q-block {
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      padding: 0.8rem;
+      margin: 0.8rem 0;
+      border: 1px solid rgba(0,212,170,0.2);
+    }
+    .q-block .q-label {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .q-block .q-text {
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+    .q-block .reponse {
+      font-size: 0.8rem;
+      color: #4ade80;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed rgba(0,212,170,0.3);
+    }
+    .q-block details {
+      margin-top: 0.5rem;
+    }
+    .q-block details summary {
+      font-size: 0.8rem;
+      color: var(--accent);
+      cursor: pointer;
+      padding: 0;
+      list-style: none;
+    }
+    .q-block details summary::-webkit-details-marker { display: none; }
+    .q-block details summary {
+      font-weight: 600;
+    }
+    .ex-table {
+      font-size: 0.75rem;
+      margin: 0.5rem 0;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .ex-table td, .ex-table th {
+      padding: 0.3rem 0.5rem;
+      border: 1px solid rgba(0,212,170,0.2);
+    }
+    .ex-table th { color: var(--accent); }
+    @media (min-width: 600px) {
+      body { max-width: 500px; margin: 0 auto; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>📋 Fiche SQL</h1>
+  <p style="text-align:center;color:var(--muted);font-size:0.85rem;margin-bottom:1rem">Appuie pour voir plus</p>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>Tables de référence</h2>
+        <p class="preview">users, roles, notes — structures utilisées dans les exemples</p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <p class="subtitle">users(id, nom, prenom)</p>
+        <p>Ex: (1, Dupont, Jean), (2, Martin, Marie), (3, Dupont, Paul)</p>
+        <p class="subtitle">roles(nom, role)</p>
+        <p>Ex: (Dupont, admin), (Martin, user)</p>
+        <p class="subtitle">notes(nom, valeur)</p>
+        <p>Ex: (Alice, 12), (Alice, 14), (Bob, 10) — notes des étudiants</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>GROUP BY</h2>
+        <p class="preview"><span class="mnemo">GAG</span> — + colonnes = + lignes</p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <p class="subtitle">Règle GAG</p>
+        <p>Chaque colonne du SELECT doit être soit dans le GROUP BY, soit dans une fonction d'agrégat (COUNT, SUM, AVG, MAX, MIN).</p>
+        <div class="code">
+          <span class="err">SELECT nom, prenom, count(*) FROM users GROUP BY nom</span><br>
+          → prenom ni dans GROUP BY ni agrégat = <span class="err">invalide</span>
+        </div>
+        <div class="code">
+          <span class="ok">SELECT nom, count(*) FROM users GROUP BY nom, prenom</span><br>
+          → valide
+        </div>
+        <p class="subtitle">Nombre de lignes</p>
+        <p>GROUP BY nom, prenom crée plus de groupes que GROUP BY nom seul → plus de lignes en résultat.</p>
+        <p>Ex: users a 3 lignes (Dupont/Jean, Dupont/Paul, Martin/Marie). GROUP BY nom → 2 lignes. GROUP BY nom, prenom → 3 lignes.</p>
+        <div class="tip"><strong>Mémo :</strong> Plus on divise les groupes, plus on a de lignes.</div>
+        <p class="subtitle">Questions type</p>
+        <div class="q-block">
+          <div class="q-label">Q1</div>
+          <div class="q-text">R1: SELECT nom FROM users GROUP BY nom — R2: SELECT nom FROM users GROUP BY nom, prenom. Laquelle donne le plus de lignes ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>R2.</strong> Plus de colonnes dans GROUP BY = plus de groupes = plus de lignes.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q2</div>
+          <div class="q-text">SELECT nom, prenom, count(*) FROM users GROUP BY nom — valide ou invalide ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Invalide.</strong> prenom est dans SELECT mais ni dans GROUP BY ni dans un agrégat (règle GAG).</div></details>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>Agrégats imbriqués</h2>
+        <p class="preview"><span class="mnemo">Pas de poupée russe</span></p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <p>On ne peut pas imbriquer des agrégats directement. Un seul niveau à la fois.</p>
+        <div class="code">
+          <span class="err">SELECT max(count(*)) FROM notes GROUP BY nom</span><br>
+          → <span class="err">invalide</span>
+        </div>
+        <p>Pour faire équivalent : utiliser une sous-requête.</p>
+        <div class="code">
+          <span class="ok">SELECT max(c) FROM (SELECT count(*) as c FROM notes GROUP BY nom)</span>
+        </div>
+        <div class="tip"><strong>Mémo :</strong> Pas de max(count()), sum(avg()), etc. directement.</div>
+        <p class="subtitle">Questions type</p>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">SELECT nom, max(count(*)) FROM notes GROUP BY nom — que renvoie cette requête ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Rien, elle est invalide.</strong> On ne peut pas imbriquer max(count()) directement.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">SELECT nom, sum(valeur)/count(*) FROM notes GROUP BY nom — valide ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Valide.</strong> sum() et count() sont au même niveau (pas imbriqués), pas de max(count()).</div></details>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>DELETE / TRUNCATE / DROP</h2>
+        <p class="preview">Données → Vide → Détruit</p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <p class="subtitle">DELETE FROM table</p>
+        <p>Supprime les <strong>lignes</strong>. La table reste, structure intacte. Peut avoir WHERE.</p>
+        <p class="subtitle">TRUNCATE TABLE table</p>
+        <p>Vide la table (toutes les lignes). La <strong>structure</strong> reste. Plus rapide que DELETE.</p>
+        <p class="subtitle">DROP TABLE table</p>
+        <p>Supprime la table <strong>entière</strong> (structure + données). La table n'existe plus.</p>
+        <div class="tip"><strong>Mémo :</strong> DELETE = données, TRUNCATE = vide, DROP = destruction totale.</div>
+        <p class="subtitle">Questions type</p>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">DELETE FROM users; — que fait cette requête ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Efface les données mais pas la table.</strong> La structure (colonnes, etc.) reste. La table existe toujours, vide.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">TRUNCATE TABLE users; — la table existe encore après ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Oui.</strong> TRUNCATE vide la table, la structure reste. Pour supprimer la table : DROP TABLE.</div></details>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>IN (sous-requête)</h2>
+        <p class="preview"><span class="mnemo">IN = 1 colonne</span></p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <p>La sous-requête après IN doit renvoyer <strong>exactement une colonne</strong>. Pas deux, pas zéro.</p>
+        <div class="code">
+          <span class="err">WHERE nom IN (SELECT nom, prenom FROM users)</span><br>
+          → 2 colonnes = <span class="err">invalide</span>
+        </div>
+        <div class="code">
+          <span class="ok">WHERE nom IN (SELECT nom FROM users)</span><br>
+          → 1 colonne = valide
+        </div>
+        <div class="tip"><strong>Mémo :</strong> IN compare une valeur à une liste → la liste = 1 colonne.</div>
+        <p class="subtitle">Questions type</p>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">SELECT * FROM roles WHERE nom IN (SELECT nom, prenom FROM users) — valide ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Non valide.</strong> La sous-requête renvoie 2 colonnes (nom, prenom), IN exige 1 seule colonne.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">SELECT * FROM roles WHERE nom IN (SELECT nom FROM users) — valide ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Valide.</strong> 1 colonne dans la sous-requête. Renvoie les rôles dont le nom est dans users.</div></details>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>EXISTS / NOT EXISTS</h2>
+        <p class="preview">Test de présence → 0 ou des lignes</p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <p class="subtitle">EXISTS</p>
+        <p>Retourne TRUE si la sous-requête renvoie au moins une ligne. Le contenu des colonnes n'a pas d'importance (souvent SELECT 1).</p>
+        <p class="subtitle">NOT EXISTS</p>
+        <p>Retourne TRUE si la sous-requête ne renvoie <strong>aucune</strong> ligne.</p>
+        <p class="subtitle">Piège classique</p>
+        <p>Si la sous-requête renvoie <strong>toujours</strong> des lignes (ex: SELECT nom FROM users sans WHERE), alors NOT EXISTS est toujours FALSE → 0 résultat.</p>
+        <div class="code">
+          <span class="err">SELECT * FROM users WHERE NOT EXISTS (SELECT nom FROM users)</span><br>
+          → sous-requête lit toute la table → toujours des lignes → NOT EXISTS = faux → <strong>0 ligne</strong>
+        </div>
+        <div class="tip"><strong>Mémo :</strong> NOT EXISTS + sous-requête qui renvoie tout = jamais de résultat.</div>
+        <p class="subtitle">Questions type</p>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">SELECT * FROM users WHERE NOT EXISTS (SELECT nom FROM users) — des résultats ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Non, jamais.</strong> La sous-requête renvoie toujours des lignes (toute la table). NOT EXISTS = toujours faux → 0 ligne.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">SELECT * FROM users u WHERE EXISTS (SELECT 1 FROM roles r WHERE r.nom = u.nom) — valide ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Valide.</strong> Sous-requête corrélée (u.nom). Renvoie les users qui ont un rôle correspondant.</div></details>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>Corrélée vs non corrélée</h2>
+        <p class="preview"><span class="mnemo">Préfère non corrélée</span></p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <p class="subtitle">Sous-requête non corrélée</p>
+        <p>Indépendante de la requête externe. Exécutée <strong>une seule fois</strong>. Plus rapide.</p>
+        <div class="code">
+          SELECT * FROM users WHERE nom IN (SELECT nom FROM roles)
+        </div>
+        <p class="subtitle">Sous-requête corrélée</p>
+        <p>Référence une colonne de la requête externe (ex: u.nom). Exécutée <strong>pour chaque ligne</strong>. Plus lente.</p>
+        <div class="code">
+          SELECT * FROM users u WHERE EXISTS (SELECT 1 FROM roles r WHERE r.nom = u.nom)
+        </div>
+        <div class="tip"><strong>Mémo :</strong> Si les deux solutions marchent, choisis la non corrélée (performance).</div>
+        <p class="subtitle">Questions type</p>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">Deux solutions : une avec sous-requête corrélée, l'autre non corrélée. Laquelle préférer ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Non corrélée.</strong> Exécutée 1 fois vs N fois (pour chaque ligne). Meilleure performance.</div></details>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>JOINs</h2>
+        <p class="preview">INNER / LEFT / RIGHT — LEFT/RIGHT ≥ INNER</p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <p class="subtitle">INNER JOIN</p>
+        <p>Seulement les lignes qui matchent <strong>des deux côtés</strong>. Intersection.</p>
+        <p class="subtitle">LEFT JOIN</p>
+        <p><strong>Toutes</strong> les lignes de la table de gauche + les matchs à droite. Pas de match = NULL à droite.</p>
+        <p class="subtitle">RIGHT JOIN</p>
+        <p><strong>Toutes</strong> les lignes de la table de droite + les matchs à gauche.</p>
+        <p class="subtitle">Ordre des résultats</p>
+        <p>LEFT JOIN garde tout à gauche → toujours ≥ INNER. RIGHT JOIN garde tout à droite → toujours ≥ INNER. Le résultat de INNER est inclus dans LEFT et RIGHT.</p>
+        <div class="code">
+          R1: INNER JOIN → seulement les matchs<br>
+          R2: LEFT JOIN  → tous les users + matchs<br>
+          → R2 a toujours ≥ lignes que R1
+        </div>
+        <div class="tip"><strong>Mémo :</strong> LEFT = tout à gauche, RIGHT = tout à droite, INNER = matchs uniquement.</div>
+        <p class="subtitle">Exemple avec données</p>
+        <p>users: (1,Dupont,Jean), (2,Martin,Marie) — roles: (Dupont,admin)</p>
+        <table class="ex-table">
+          <tr><th>Requête</th><th>Résultat</th></tr>
+          <tr><td>INNER JOIN</td><td>1 ligne (Dupont)</td></tr>
+          <tr><td>LEFT JOIN users</td><td>2 lignes (Dupont+admin, Martin+NULL)</td></tr>
+        </table>
+        <p class="subtitle">Questions type</p>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">R1: INNER JOIN — R2: LEFT JOIN (table gauche = users). Qui donne le plus de lignes ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>R2 (LEFT JOIN).</strong> Garde tous les users. INNER ne garde que les matchs. R2 ≥ R1 toujours.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q</div>
+          <div class="q-text">Si tous les users ont un rôle, INNER et LEFT donnent le même nombre de lignes ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Oui.</strong> Si tout matche, pas de NULL → même résultat. Mais en général LEFT ≥ INNER.</div></details>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>Checklist rapide</h2>
+        <p class="preview">Points à vérifier avant de répondre</p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <div class="checklist">
+          <span class="tag">GAG</span>
+          <span class="tag">+ colonnes = + lignes</span>
+          <span class="tag">Pas d'agrégat imbriqué</span>
+          <span class="tag">IN = 1 colonne</span>
+          <span class="tag">NOT EXISTS + toujours vrai = 0</span>
+          <span class="tag">Non corrélée préférée</span>
+          <span class="tag">LEFT/RIGHT ≥ INNER</span>
+        </div>
+        <p style="margin-top:1rem">GAG • Pas de poupée russe • DELETE/TRUNCATE/DROP • IN = 1 col • NOT EXISTS • Non corrélée • LEFT ≥ INNER</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="card">
+    <summary>
+      <div>
+        <h2>Questions type examen</h2>
+        <p class="preview">QCM style test — entraînement mixte</p>
+      </div>
+    </summary>
+    <div class="details">
+      <div class="details-inner">
+        <div class="q-block">
+          <div class="q-label">Q1</div>
+          <div class="q-text">SELECT nom, prenom, count(*) FROM users GROUP BY nom — a) Invalide b) Valide c) 0 résultat</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>a) Invalide.</strong> prenom pas dans GROUP BY ni agrégat.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q2</div>
+          <div class="q-text">DELETE FROM users; — a) Efface table b) Invalide c) Efface données, table reste</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>c)</strong> Efface les données, la structure de la table reste.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q3</div>
+          <div class="q-text">SELECT nom, max(count(*)) FROM notes GROUP BY nom — a) Noms avec max de notes b) Invalide c) Valeur max par nom</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>b) Invalide.</strong> Agrégats imbriqués interdits.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q4</div>
+          <div class="q-text">WHERE nom IN (SELECT nom, prenom FROM users) — a) Valide b) Invalide</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>b) Invalide.</strong> IN exige 1 colonne, pas 2.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q5</div>
+          <div class="q-text">SELECT * FROM users WHERE NOT EXISTS (SELECT nom FROM users) — des résultats ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>Non.</strong> Sous-requête renvoie toujours des lignes → NOT EXISTS = faux → 0 ligne.</div></details>
+        </div>
+        <div class="q-block">
+          <div class="q-label">Q6</div>
+          <div class="q-text">INNER JOIN vs LEFT JOIN (users à gauche) — qui donne le plus de lignes ?</div>
+          <details><summary>→ Voir la réponse</summary><div class="reponse"><strong>LEFT JOIN.</strong> Garde tous les users. INNER ne garde que les matchs.</div></details>
+        </div>
+      </div>
+    </div>
+  </details>
+</body>
+</html>

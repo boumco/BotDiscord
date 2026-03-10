@@ -1,0 +1,254 @@
+{
+  "tasks": [
+    {
+      "id": "0",
+      "name": "Rig TheKnight",
+      "start": "2026-03-09",
+      "durationDays": 5,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "1",
+        "5",
+        "7"
+      ],
+      "responsibleIds": [
+        "575644322091761684"
+      ],
+      "remindersSent": {
+        "dayBefore": true
+      }
+    },
+    {
+      "id": "2",
+      "name": "Sons pour TheKnight",
+      "start": "2026-03-09",
+      "durationDays": 1,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "1",
+        "13"
+      ],
+      "responsibleIds": [
+        "1097147077559079013"
+      ],
+      "remindersSent": {
+        "dayBefore": true
+      }
+    },
+    {
+      "id": "1",
+      "name": "Dev TheKnight",
+      "start": "2026-04-07",
+      "durationDays": 1,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "6",
+        "10"
+      ],
+      "responsibleIds": [
+        "546735493346230272"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "6",
+      "name": "Création/Dev Lobby",
+      "start": "2026-03-27",
+      "durationDays": 7,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "9"
+      ],
+      "responsibleIds": [
+        "1365764514385236078",
+        "546735493346230272"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "3",
+      "name": "Map Springtrap",
+      "start": "2026-03-09",
+      "durationDays": 14,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "5",
+        "6"
+      ],
+      "responsibleIds": [
+        "1365764514385236078"
+      ],
+      "remindersSent": {
+        "dayBefore": true
+      }
+    },
+    {
+      "id": "5",
+      "name": "Animation TheKnight",
+      "start": "2026-03-27",
+      "durationDays": 7,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "1",
+        "20"
+      ],
+      "responsibleIds": [
+        "1365764514385236078"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "9",
+      "name": "Dev première partie",
+      "start": "2026-04-07",
+      "durationDays": 3,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "14"
+      ],
+      "responsibleIds": [
+        "546735493346230272"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "10",
+      "name": "Sans Création",
+      "start": "2026-03-19",
+      "durationDays": 14,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "12"
+      ],
+      "responsibleIds": [
+        "575644322091761684"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "12",
+      "name": "Implémentation Sans",
+      "start": "2026-04-08",
+      "durationDays": 1,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "18"
+      ],
+      "responsibleIds": [
+        "546735493346230272"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "14",
+      "name": "Phase Test",
+      "start": "2026-04-10",
+      "durationDays": 3,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "15",
+        "16",
+        "17",
+        "19"
+      ],
+      "responsibleIds": [
+        "575644322091761684",
+        "546735493346230272",
+        "1097147077559079013",
+        "1365764514385236078"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "15",
+      "name": "Animation Sans",
+      "start": "2026-04-15",
+      "durationDays": 7,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "19"
+      ],
+      "responsibleIds": [
+        "1365764514385236078"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "16",
+      "name": "Creation",
+      "start": "2026-04-15",
+      "durationDays": 7,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "21"
+      ],
+      "responsibleIds": [
+        "575644322091761684"
+      ],
+      "remindersSent": {}
+    },
+    {
+      "id": "17",
+      "name": "Faire caca sur Oualid",
+      "start": "2026-03-09",
+      "durationDays": 1,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [],
+      "responsibleIds": [
+        "575644322091761684",
+        "546735493346230272",
+        "1097147077559079013",
+        "1365764514385236078"
+      ],
+      "remindersSent": {
+        "dayBefore": true
+      }
+    },
+    {
+      "id": "18",
+      "name": "Création suite planning",
+      "start": "2026-04-13",
+      "durationDays": 1,
+      "completed": false,
+      "completedAt": null,
+      "completedBy": null,
+      "predecessorIds": [
+        "14"
+      ],
+      "responsibleIds": [
+        "575644322091761684",
+        "546735493346230272",
+        "1097147077559079013",
+        "1365764514385236078"
+      ],
+      "remindersSent": {}
+    }
+  ],
+  "lastGanttImport": "2026-03-08T21:11:22.910Z"
+}

@@ -1,0 +1,287 @@
+[TASKS_DEBUG] 2026-03-08T21:27:30.602Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:27:30.604Z getTasks: using tasks.json total=12 with responsibleIds=0
+[TASKS_DEBUG] 2026-03-08T21:27:30.606Z HTML task id=0 name=Rig TheKnight start=2026-03-09 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.607Z HTML task id=1 name=Sons pour TheKnight start=2026-03-09 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.607Z HTML task id=4 name=Création/Dev Lobby start=2026-03-27 responsibleIds=2 ["1365764514385236078","546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.608Z HTML task id=5 name=Map Springtrap start=2026-03-09 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.607Z HTML task id=3 name=Plan Lobby start=2026-03-16 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.608Z HTML task id=6 name=Animation TheKnight start=2026-03-27 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.607Z HTML task id=2 name=Dev TheKnight start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.608Z HTML task id=9 name=Implémentation Sans start=2026-04-08 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.608Z HTML task id=7 name=Dev première partie start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.611Z HTML task id=11 name=Phase Test start=2026-04-10 responsibleIds=4 ["575644322091761684","546735493346230272","1097147077559079013","1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.611Z HTML task id=10 name=Sons Sans start=2026-03-10 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.611Z HTML task id=12 name=Animation Sans start=2026-04-15 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.611Z HTML task id=14 name=HUD/Refac/UX start=2026-04-15 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.611Z HTML task id=13 name=Creation start=2026-04-15 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.611Z HTML task id=15 name=Pack Son start=2026-03-11 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.608Z HTML task id=8 name=Sans Création start=2026-03-19 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.612Z HTML task id=18 name=Boutique start=2026-04-24 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.612Z HTML task id=17 name=Plan Nouvel Map start=2026-04-07 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.613Z Import HTML Projet BrokenRealm-tasks.html count=19 sample: {"id":"0","name":"Rig TheKnight","start":"2026-03-09","durationDays":5,"completed":false,"completedAt":null,"completedBy":null,"predecessorIds":[],"responsibleIds":["575644322091761684"],"remindersSent":{}}
+[TASKS_DEBUG] 2026-03-08T21:27:30.614Z enriched from HTML id=0 name=Rig TheKnight start=2026-03-09 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.615Z enriched from HTML id=1 name=Dev TheKnight start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.612Z HTML task id=16 name=Nouvel map start=2026-04-24 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.616Z enriched from HTML id=6 name=Création/Dev Lobby start=2026-03-27 responsibleIds=2 ["1365764514385236078","546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.615Z enriched from HTML id=2 name=Sons pour TheKnight start=2026-03-09 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.617Z enriched from HTML id=10 name=Sans Création start=2026-03-19 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.617Z enriched from HTML id=5 name=Animation TheKnight start=2026-03-27 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.618Z enriched from HTML id=12 name=Implémentation Sans start=2026-04-08 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.618Z enriched from HTML id=14 name=Phase Test start=2026-04-10 responsibleIds=4 ["575644322091761684","546735493346230272","1097147077559079013","1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.616Z enriched from HTML id=3 name=Map Springtrap start=2026-03-09 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.619Z enriched from HTML id=15 name=Animation Sans start=2026-04-15 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.617Z enriched from HTML id=9 name=Dev première partie start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.619Z enriched from HTML id=16 name=Creation start=2026-04-15 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:27:30.627Z enrichFromHtml: updated 12 tasks with responsibleIds
+[TASKS_DEBUG] 2026-03-08T21:27:30.922Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:27:30.923Z getTasks: using tasks.json total=12 with responsibleIds=12
+[TASKS_DEBUG] 2026-03-08T21:28:30.928Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:28:30.929Z getTasks: using tasks.json total=12 with responsibleIds=12
+[TASKS_DEBUG] 2026-03-08T21:29:30.944Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:29:30.949Z getTasks: using tasks.json total=12 with responsibleIds=12
+[TASKS_DEBUG] 2026-03-08T21:29:53.577Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:29:53.582Z getTasks: using tasks.json total=12 with responsibleIds=12
+[TASKS_DEBUG] 2026-03-08T21:29:53.851Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:29:53.852Z getTasks: using tasks.json total=12 with responsibleIds=12
+[TASKS_DEBUG] 2026-03-08T21:30:22.658Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:30:22.660Z getTasks: using tasks.json total=12 with responsibleIds=12
+[TASKS_DEBUG] 2026-03-08T21:30:53.864Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:30:53.867Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:31:53.876Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:31:53.877Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:36:08.698Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:36:08.705Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:36:09.094Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:36:09.095Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:36:09.097Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:36:09.099Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:37:09.108Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:37:09.114Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:38:09.113Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:38:09.118Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:42:04.100Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:42:04.102Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:42:04.457Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:42:04.459Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:42:04.463Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:42:04.464Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:45:34.778Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:45:34.785Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:45:36.786Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:45:36.789Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:45:36.804Z HTML task id=0 name=Rig TheKnight start=2026-03-09 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.805Z HTML task id=1 name=Sons pour TheKnight start=2026-03-09 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.805Z HTML task id=2 name=Dev TheKnight start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.806Z HTML task id=3 name=Plan Lobby start=2026-03-16 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.807Z HTML task id=4 name=Création/Dev Lobby start=2026-03-27 responsibleIds=2 ["1365764514385236078","546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.808Z HTML task id=5 name=Map Springtrap start=2026-03-09 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.808Z HTML task id=6 name=Animation TheKnight start=2026-03-27 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.809Z HTML task id=7 name=Dev première partie start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.809Z HTML task id=8 name=Sans Création start=2026-03-19 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.810Z HTML task id=9 name=Implémentation Sans start=2026-04-08 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.810Z HTML task id=10 name=Sons Sans start=2026-03-10 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.811Z HTML task id=11 name=Phase Test start=2026-04-10 responsibleIds=4 ["575644322091761684","546735493346230272","1097147077559079013","1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.811Z HTML task id=12 name=Animation Sans start=2026-04-15 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.812Z HTML task id=13 name=Creation start=2026-04-15 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.812Z HTML task id=14 name=HUD/Refac/UX start=2026-04-15 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.812Z HTML task id=15 name=Pack Son start=2026-03-11 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.813Z HTML task id=16 name=Nouvel map start=2026-04-24 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.813Z HTML task id=17 name=Plan Nouvel Map start=2026-04-07 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.814Z HTML task id=18 name=Boutique start=2026-04-24 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:45:36.814Z Import HTML Projet BrokenRealm-tasks.html count=19 sample: {"id":"0","name":"Rig TheKnight","start":"2026-03-09","durationDays":5,"completed":false,"completedAt":null,"completedBy":null,"predecessorIds":[],"responsibleIds":["575644322091761684"],"remindersSent":{}}
+[TASKS_DEBUG] 2026-03-08T21:45:36.826Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:45:36.828Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:46:34.783Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:46:34.785Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:49:30.459Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:49:30.469Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:49:32.463Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:49:32.466Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:49:32.478Z HTML task id=0 name=Rig TheKnight start=2026-03-09 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.479Z HTML task id=1 name=Sons pour TheKnight start=2026-03-09 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.480Z HTML task id=2 name=Dev TheKnight start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.481Z HTML task id=3 name=Plan Lobby start=2026-03-16 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.482Z HTML task id=4 name=Création/Dev Lobby start=2026-03-27 responsibleIds=2 ["1365764514385236078","546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.483Z HTML task id=5 name=Map Springtrap start=2026-03-09 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.485Z HTML task id=6 name=Animation TheKnight start=2026-03-27 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.486Z HTML task id=8 name=Sans Création start=2026-03-19 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.485Z HTML task id=7 name=Dev première partie start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.486Z HTML task id=9 name=Implémentation Sans start=2026-04-08 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.487Z HTML task id=10 name=Sons Sans start=2026-03-10 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.487Z HTML task id=11 name=Phase Test start=2026-04-10 responsibleIds=4 ["575644322091761684","546735493346230272","1097147077559079013","1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.488Z HTML task id=12 name=Animation Sans start=2026-04-15 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.488Z HTML task id=13 name=Creation start=2026-04-15 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.493Z HTML task id=14 name=HUD/Refac/UX start=2026-04-15 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.495Z HTML task id=15 name=Pack Son start=2026-03-11 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.496Z HTML task id=16 name=Nouvel map start=2026-04-24 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.497Z HTML task id=17 name=Plan Nouvel Map start=2026-04-07 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.498Z HTML task id=18 name=Boutique start=2026-04-24 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:49:32.499Z Import HTML Projet BrokenRealm-tasks.html count=19 sample: {"id":"0","name":"Rig TheKnight","start":"2026-03-09","durationDays":5,"completed":false,"completedAt":null,"completedBy":null,"predecessorIds":[],"responsibleIds":["575644322091761684"],"remindersSent":{}}
+[TASKS_DEBUG] 2026-03-08T21:49:36.052Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:49:36.053Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:50:19.044Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:50:19.046Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:50:21.047Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:50:21.051Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:50:21.057Z HTML task id=0 name=Rig TheKnight start=2026-03-09 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.058Z HTML task id=1 name=Sons pour TheKnight start=2026-03-09 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.058Z HTML task id=2 name=Dev TheKnight start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.059Z HTML task id=3 name=Plan Lobby start=2026-03-16 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.060Z HTML task id=4 name=Création/Dev Lobby start=2026-03-27 responsibleIds=2 ["1365764514385236078","546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.061Z HTML task id=5 name=Map Springtrap start=2026-03-09 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.062Z HTML task id=6 name=Animation TheKnight start=2026-03-27 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.062Z HTML task id=7 name=Dev première partie start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.064Z HTML task id=8 name=Sans Création start=2026-03-19 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.065Z HTML task id=9 name=Implémentation Sans start=2026-04-08 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.066Z HTML task id=10 name=Sons Sans start=2026-03-10 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.067Z HTML task id=11 name=Phase Test start=2026-04-10 responsibleIds=4 ["575644322091761684","546735493346230272","1097147077559079013","1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.068Z HTML task id=12 name=Animation Sans start=2026-04-15 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.068Z HTML task id=13 name=Creation start=2026-04-15 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.069Z HTML task id=14 name=HUD/Refac/UX start=2026-04-15 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.070Z HTML task id=15 name=Pack Son start=2026-03-11 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.070Z HTML task id=16 name=Nouvel map start=2026-04-24 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.071Z HTML task id=17 name=Plan Nouvel Map start=2026-04-07 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.072Z HTML task id=18 name=Boutique start=2026-04-24 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:50:21.072Z Import HTML Projet BrokenRealm-tasks.html count=19 sample: {"id":"0","name":"Rig TheKnight","start":"2026-03-09","durationDays":5,"completed":false,"completedAt":null,"completedBy":null,"predecessorIds":[],"responsibleIds":["575644322091761684"],"remindersSent":{}}
+[TASKS_DEBUG] 2026-03-08T21:50:27.960Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:50:27.961Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:51:01.623Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:51:01.626Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:51:19.052Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:51:19.057Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:52:19.066Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:52:19.067Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:52:38.811Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:52:38.816Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:52:40.819Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:52:40.821Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:52:40.829Z HTML task id=0 name=Rig TheKnight start=2026-03-09 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.830Z HTML task id=1 name=Sons pour TheKnight start=2026-03-09 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.831Z HTML task id=2 name=Dev TheKnight start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.832Z HTML task id=3 name=Plan Lobby start=2026-03-16 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.832Z HTML task id=4 name=Création/Dev Lobby start=2026-03-27 responsibleIds=2 ["1365764514385236078","546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.833Z HTML task id=5 name=Map Springtrap start=2026-03-09 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.833Z HTML task id=6 name=Animation TheKnight start=2026-03-27 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.834Z HTML task id=7 name=Dev première partie start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.835Z HTML task id=8 name=Sans Création start=2026-03-19 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.836Z HTML task id=9 name=Implémentation Sans start=2026-04-08 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.836Z HTML task id=10 name=Sons Sans start=2026-03-10 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.836Z HTML task id=11 name=Phase Test start=2026-04-10 responsibleIds=4 ["575644322091761684","546735493346230272","1097147077559079013","1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.839Z HTML task id=15 name=Pack Son start=2026-03-11 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.840Z HTML task id=16 name=Nouvel map start=2026-04-24 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.841Z HTML task id=17 name=Plan Nouvel Map start=2026-04-07 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.837Z HTML task id=12 name=Animation Sans start=2026-04-15 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.842Z HTML task id=18 name=Boutique start=2026-04-24 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.837Z HTML task id=13 name=Creation start=2026-04-15 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:52:40.843Z Import HTML Projet BrokenRealm-tasks.html count=19 sample: {"id":"0","name":"Rig TheKnight","start":"2026-03-09","durationDays":5,"completed":false,"completedAt":null,"completedBy":null,"predecessorIds":[],"responsibleIds":["575644322091761684"],"remindersSent":{}}
+[TASKS_DEBUG] 2026-03-08T21:52:40.838Z HTML task id=14 name=HUD/Refac/UX start=2026-04-15 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:52:44.979Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:52:44.980Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:53:30.899Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:53:30.903Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:53:32.910Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:53:32.912Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:53:32.921Z HTML task id=0 name=Rig TheKnight start=2026-03-09 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.921Z HTML task id=1 name=Sons pour TheKnight start=2026-03-09 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.922Z HTML task id=2 name=Dev TheKnight start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.923Z HTML task id=3 name=Plan Lobby start=2026-03-16 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.924Z HTML task id=4 name=Création/Dev Lobby start=2026-03-27 responsibleIds=2 ["1365764514385236078","546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.924Z HTML task id=5 name=Map Springtrap start=2026-03-09 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.925Z HTML task id=6 name=Animation TheKnight start=2026-03-27 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.926Z HTML task id=7 name=Dev première partie start=2026-04-07 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.927Z HTML task id=8 name=Sans Création start=2026-03-19 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.928Z HTML task id=9 name=Implémentation Sans start=2026-04-08 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.929Z HTML task id=10 name=Sons Sans start=2026-03-10 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.930Z HTML task id=11 name=Phase Test start=2026-04-10 responsibleIds=4 ["575644322091761684","546735493346230272","1097147077559079013","1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.930Z HTML task id=12 name=Animation Sans start=2026-04-15 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.931Z HTML task id=13 name=Creation start=2026-04-15 responsibleIds=1 ["575644322091761684"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.932Z HTML task id=14 name=HUD/Refac/UX start=2026-04-15 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.934Z HTML task id=16 name=Nouvel map start=2026-04-24 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.934Z HTML task id=17 name=Plan Nouvel Map start=2026-04-07 responsibleIds=1 ["1365764514385236078"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.936Z Import HTML Projet BrokenRealm-tasks.html count=19 sample: {"id":"0","name":"Rig TheKnight","start":"2026-03-09","durationDays":5,"completed":false,"completedAt":null,"completedBy":null,"predecessorIds":[],"responsibleIds":["575644322091761684"],"remindersSent":{}}
+[TASKS_DEBUG] 2026-03-08T21:53:32.933Z HTML task id=15 name=Pack Son start=2026-03-11 responsibleIds=1 ["1097147077559079013"]
+[TASKS_DEBUG] 2026-03-08T21:53:32.935Z HTML task id=18 name=Boutique start=2026-04-24 responsibleIds=1 ["546735493346230272"]
+[TASKS_DEBUG] 2026-03-08T21:53:37.093Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:53:37.097Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:54:09.396Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:54:09.398Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:54:30.907Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:54:30.910Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:55:30.866Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:55:30.867Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:55:30.916Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:55:30.918Z getTasks: using tasks.json total=13 with responsibleIds=13
+[TASKS_DEBUG] 2026-03-08T21:56:02.777Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:56:02.785Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T21:56:30.927Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:56:30.929Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T21:57:30.934Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:57:30.935Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T21:58:30.937Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:58:30.943Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T21:59:30.939Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T21:59:30.940Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:00:30.944Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:00:30.945Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:01:30.954Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:01:30.957Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:02:30.966Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:02:30.967Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:03:30.981Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:03:30.983Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:04:30.990Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:04:30.991Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:05:30.993Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:05:30.994Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:06:31.001Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:06:31.004Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:07:31.004Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:07:31.005Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:08:31.016Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:08:31.020Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:09:31.026Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:09:31.029Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:10:31.034Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:10:31.036Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:11:31.049Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:11:31.055Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:12:31.049Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:12:31.051Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:13:31.058Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:13:31.059Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:14:31.071Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:14:31.075Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:15:31.077Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:15:31.080Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:16:31.088Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:16:31.091Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:17:31.091Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:17:31.095Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:18:31.104Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:18:31.106Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:19:31.107Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:19:31.109Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:20:31.119Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:20:31.124Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:21:31.124Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:21:31.126Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:22:31.135Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:22:31.138Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:23:31.136Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:23:31.137Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:24:31.149Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:24:31.152Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:25:31.163Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:25:31.166Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:26:31.169Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:26:31.170Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:27:31.179Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:27:31.181Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:28:31.192Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:28:31.195Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:29:31.196Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:29:31.199Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:30:31.201Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:30:31.205Z getTasks: using tasks.json total=14 with responsibleIds=14
+[TASKS_DEBUG] 2026-03-08T22:31:31.209Z Sources data: tasksHtml=Projet BrokenRealm-tasks.html resourcesHtml=Projet BrokenRealm-resources.html gan=Projet BrokenRealm.gan
+[TASKS_DEBUG] 2026-03-08T22:31:31.211Z getTasks: using tasks.json total=14 with responsibleIds=14

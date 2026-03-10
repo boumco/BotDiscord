@@ -25,6 +25,16 @@ import { buildWelcomeEmbed, buildTicketChannelComponents, buildTicketDeleteNowEm
 import { getFaqResponse } from "./lib/faq.js";
 import { STAFF_ROLE_ID, ADMIN_ROLE_IDS, isStaffOrAdmin, isAdmin, TICKET_OVERWRITE_ALLOW } from "./lib/ticketConfig.js";
 import { statstaffCommand } from "./slash/statstaff.js";
+import { tachefiniCommand, handleTachefiniSelect } from "./slash/tachefini.js";
+import {
+  addtaskCommand,
+  handleAddTaskModal,
+  handleAddTaskPredecessorSelect,
+  handleAddTaskResponsiblesSelect,
+  handleAddTaskSubmit
+} from "./slash/addtask.js";
+import { tasklistCommand } from "./slash/tasklist.js";
+import { startTaskScheduler, sendWeeklyProgramOnStart } from "./lib/taskScheduler.js";
 
 const token = process.env.DISCORD_TOKEN;
 if (!token) {
@@ -49,6 +59,9 @@ client.commands.set(helpCommand.data.name, helpCommand);
 client.commands.set(musicCommand.data.name, musicCommand);
 client.commands.set(whitelistCommand.data.name, whitelistCommand);
 client.commands.set(statstaffCommand.data.name, statstaffCommand);
+client.commands.set(tachefiniCommand.data.name, tachefiniCommand);
+client.commands.set(addtaskCommand.data.name, addtaskCommand);
+client.commands.set(tasklistCommand.data.name, tasklistCommand);
 
 const verifyChallenges = new Map(); // userId -> { code, guildId, expiresAt }
 /** Cache des invitations par serveur : guildId -> Map(code -> { uses, inviterId, inviterTag }) */
@@ -149,6 +162,15 @@ client.on(Events.InteractionCreate, async (interaction) => {
     if (interaction.isChatInputCommand()) {
       const cmd = client.commands.get(interaction.commandName);
       if (!cmd) return;
+      const taskCommandNames = ["tasklist", "tachefini", "addtask"];
+      const isTaskCommand = taskCommandNames.includes(interaction.commandName);
+      if (!interaction.inGuild() && !isTaskCommand) {
+        await interaction.reply({
+          content: "Cette commande n’est disponible que sur un serveur.",
+          ephemeral: true
+        }).catch(() => {});
+        return;
+      }
       await cmd.execute(interaction);
       return;
     }
@@ -202,6 +224,29 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
       await interaction.reply({ content: "✅ Vérification réussie. Bienvenue !", ephemeral: true });
       return;
+    }
+
+    // Tâches : menu tachefini
+    if (interaction.isStringSelectMenu() && interaction.customId === "tachefini:select") {
+      const handled = await handleTachefiniSelect(interaction);
+      if (handled) return;
+    }
+
+    // Tâches : modal addtask
+    if (interaction.isModalSubmit() && interaction.customId === "addtask:modal") {
+      const handled = await handleAddTaskModal(interaction);
+      if (handled) return;
+    }
+    // Tâches : sélections addtask
+    if (interaction.isStringSelectMenu() && interaction.customId === "addtask:predecessor") {
+      if (handleAddTaskPredecessorSelect(interaction)) return;
+    }
+    if (interaction.isStringSelectMenu() && interaction.customId === "addtask:responsibles") {
+      if (handleAddTaskResponsiblesSelect(interaction)) return;
+    }
+    if (interaction.isButton() && interaction.customId === "addtask:submit") {
+      const handled = await handleAddTaskSubmit(interaction);
+      if (handled) return;
     }
 
     // Tickets : ouvrir (question / owner / denoncer)
@@ -1041,8 +1086,16 @@ client.on(Events.InviteDelete, async (invite) => {
   await sendLog(invite.guild, embed);
 });
 
-client.once(Events.ClientReady, (c) => {
+client.once(Events.ClientReady, async (c) => {
   console.log(`Logged in as ${c.user.tag}`);
+  startTaskScheduler(client);
+  setTimeout(async () => {
+    try {
+      await sendWeeklyProgramOnStart(client);
+    } catch (err) {
+      console.error("[TASKS] Démarrage (rappels + webhook):", err);
+    }
+  }, 2000);
 });
 
 await client.login(token);
